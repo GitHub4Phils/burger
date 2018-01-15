@@ -1,0 +1,39 @@
+
+<table>
+  <tr>
+    <td valign="center">
+
+  {{#each burgers}}
+    {{#unless devoured}}
+
+      <textarea>{{name}}</textarea>{{> burgers/burger-block devoured=1}}<br>
+    {{/unless}}
+  {{/each}}
+
+    </td>
+    <td align="center">
+
+
+
+<strong>Devoured!</strong><br>
+  {{#each burgers}}
+    {{#if devoured}}
+      <textarea>{{name}}</textarea><br>
+      {{!-- {{> burgers/burger-block devoured=0}} --}}
+      
+    {{/if}}
+  {{/each}}
+
+    </td>
+  </tr>
+</table>
+<br>
+{{!-- <h2>Add a burger</h2> --}}
+<form class="create-form">
+
+  <div class="form-group">
+    <textarea id="bu" name="name"></textarea>
+  </div>
+  <button type="submit">Submit</button><br>
+  Enter a burger you want to eat! click the submit button
+</form>
